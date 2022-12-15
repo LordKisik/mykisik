@@ -1,21 +1,88 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
-
 body {
-   background-color: rgba(19, 185, 171, 0.836);
-   align-items: stretch;
-   justify-content: center;
-   height: 100vh;
-   margin: 0;
+  background-color: rgba(19, 185, 171, 0.9);
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
 }
 
-a {
-   font-family: 'Rubik Mono One', sans-serif;
-   font-size: 20px;
-   text-align: center;
-   color: rgb(255, 255, 255);
-   text-shadow: 1px 1px 7px #ffffff, -1px -1px 7px #1a082c;
-   -webkit-text-stroke: 2px #c47c9ead;
-   -webkit-text-fill-color: rgb(0, 0, 0);
-   letter-spacing: 5px;
+nav {
+  font-family: Arial Black;
+  font-weight: 700;
+  font-size: 22px;
+  background-color: rgb(247, 199, 213);
+  color: black;
+
 }
+
+.nav-link2 {
+  font-family: Arial Black;
+  font-weight: 700;
+  font-size: 30px;
+  text-decoration: dashed;
+  color: black;
+}
+
+.Paginator {
+  background-color: transparent;
+}
+
+.list-group-item,
+.card-body,
+.card-footer {
+  background-color: rgba(247, 199, 213, 0.849);
+  font-family: 'Times New Roman', Times, serif Black;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.page-link {
+  color: rgba(19, 185, 171, 0.836);
+  background-color: rgba(247, 199, 213, 0.849);
+}
+
+.btn {
+  background-color: rgba(19, 185, 171, 0.836);
+  border-color: rgba(19, 185, 171, 0.836);
+}
+
+p {
+  font-family: 'Times New Roman', Times, serif Black;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+html {
+  background-image: url(img/cat_pizza.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.card {
+  background-image: url(img/dogs_fon3.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+/* {
+  background-image: url(img/dogs_fon.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
