@@ -6,36 +6,30 @@
   {% include "inc/_sidebar.html" %}
 {% endblock sidebar %}
 {% block content %}
-  <h5>Всего новостей: {{ news.count }}</h5>
-  {% for item in news %}
-    <div class="card mb-3">
-      <div>
-        {% comment %} <a href="{{ item.category.get_absolute_url }}" class="card-header">Категория: {{ item.category.title }}</a> {% endcomment %}
-      </div>
-      <div class="card-body">
-        <div class="media">
-          {% if item.photo %}
-            <img src="{{ item.photo.url }} "
-                 alt=""
-                 height="450"
-                 width="350"
-                 class="me-3 float-start"/>
-          {% else %}
-            <img src="https://picsum.photos/id/237/350/300"
-                 alt=""
-                 height="450"
-                 width="350"
-                 class="me-3 float-start"/>
-          {% endif %}
-          <div class="media-body">
-            <h5 class="card-title {% cycle 'text-danger' 'text-danger' %}">{{ item.title }}</h5>
-            <p class="card-text">{{ item.content|linebreaks|truncatewords:50 }}</p>
-            <a href="{% url 'detail_news' item.id %}" class="btn btn-primary">Читать полностью</a>
-          </div>
-          <h5>Комментариев:  {{ item.comments.count }}</h5>
+  <div class="col-md-9">
+    <h5>Всего новостей: {{ news.count }}</h5>
+    {% for item in news %}
+      <div class="card mb-3">
+        <div>
+          {% comment %} <a href="{{ item.category.get_absolute_url }}" class="card-header">Категория: {{ item.category.title }}</a> {% endcomment %}
         </div>
+        <div class="card-body">
+          <div class="media">
+                <img src="{{ item.photo.url }}"
+                     alt=""
+                     class="myimage"/>
+              <div class="media-body">
+                <h5 class="card-title {% cycle 'text-danger' 'text-danger' %}">{{ item.title }}</h5>
+                <p class="card-text">{{ item.content|linebreaks|truncatewords:50 }}</p>
+                <a href="{% url 'detail_news' item.id %}" class="btn btn-primary">Читать полностью</a>
+                <h5>Комментариев: {{ item.comments.count }}</h5>
+              </div>
+              
+          </div>
+
+        </div>
+        <div class="card-footer text-muted">{{ item.created_at|date:"Y-m-d H:i:s" }}</div>
       </div>
-      <div class="card-footer text-muted">{{ item.created_at|date:"Y-m-d H:i:s" }}</div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 {% endblock content %}

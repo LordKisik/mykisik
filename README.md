@@ -15,5 +15,7 @@ pip install -r requirements.txt
 ```
 python3 manage.py runserver
 ```
+### Ссылка на сайт
+http://lordkisik.pythonanywhere.com/
 ### Авторы
 Виталий Никонов

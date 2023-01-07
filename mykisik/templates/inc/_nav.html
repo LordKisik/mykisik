@@ -32,19 +32,15 @@
                href="{% url 'users:logout' %}">Выйти</a>
           </li>
         {% else %}
-          <li class="last">
+          <li class="nav-item">
             <a class="nav-link  {% if view_name == 'users:login' %}active{% endif %}"
                href="{% url 'users:login' %}">Войти</a>
           </li>
-          <li class="last">
+          <li class="nav-item">
             <a class="nav-link {% if view_name == 'users:signup' %}active{% endif %}"
                href="{% url 'users:signup' %}">Регистрация</a>
           </li>
         {% endif %}
-        {% comment %} <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> {% endcomment %}
       </ul>
     </div>
   </div>

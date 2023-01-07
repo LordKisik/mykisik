@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,14 +23,15 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-sq03vk=x0v2qv&7kuk4xtz@a^*2(s(yne9ci&(txdb3*!jo%x7"
-)
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.LordKisik.pythonanywhere.com',
+    'LordKisik.pythonanywhere.com',
+]
 
 
 # Application definition
@@ -162,4 +166,4 @@ CACHES = {
     }
 }
 
-CAPTCHA_IMAGE_SIZE = (140, 40)
+CAPTCHA_IMAGE_SIZE = (120, 30)

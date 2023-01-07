@@ -1,50 +1,91 @@
-body {
-  background-color: rgba(19, 185, 171, 0.9);
-  align-items: stretch;
-  justify-content: center;
-  height: 100%;
-  margin: 0;
+@font-face {
+  font-family: 'Buba';
+  src: url('BUBA_regular.ttf') format('woff2'),
+    url('BUBA_regular.ttf') format('truetype'),
+    url('BUBA_regular.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
+
 nav {
-  font-family: Arial Black;
+  font-family: Buba Black;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 35px;
   background-color: rgb(247, 199, 213);
   color: black;
 
 }
 
+.media {
+  display: flex;
+}
+
+.media-body {
+  margin: 15px;
+}
+
+.myimage {
+  width: 50%;
+  height: 70%;
+
+}
+
+.nav-link2:hover,
+.nav-link:hover {
+  color: red;
+}
+
 .nav-link2 {
-  font-family: Arial Black;
-  font-weight: 700;
-  font-size: 30px;
+  font-family: Buba Black;
+  text-shadow: 1px 1px 1px #000000;
+  font-weight: 900;
+  font-size: 40px;
+  margin-right: 86px;
   text-decoration: dashed;
   color: black;
+}
+
+.nav-item {
+  text-shadow: 1px 1px 1px #000000;
+  margin-right: 30px;
 }
 
 .Paginator {
   background-color: transparent;
 }
 
-.list-group-item,
-.card-body,
-.card-footer {
-  background-color: rgba(247, 199, 213, 0.849);
+.list-group-item {
+  background-color: rgba(247, 199, 213, 0.85);
   font-family: 'Times New Roman', Times, serif Black;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
 }
 
+.card-body,
+.card-footer {
+  background-color: rgba(247, 199, 213, 0.85);
+  font-family: 'Times New Roman', Times, serif Black;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  border-radius: 15px 15px 0px 0px;
+}
+
 .page-link {
-  color: rgba(19, 185, 171, 0.836);
-  background-color: rgba(247, 199, 213, 0.849);
+  color: rgba(0, 0, 0);
+  background-color: rgba(247, 199, 213, 0.85);
 }
 
 .btn {
-  background-color: rgba(19, 185, 171, 0.836);
-  border-color: rgba(19, 185, 171, 0.836);
+  background-color: rgba(19, 185, 171, 0.85);
+  border-color: rgba(19, 185, 171, 0.85);
+}
+
+.btn-primary:hover {
+  background: red;
+  border-color: red;
 }
 
 p {
@@ -54,8 +95,9 @@ p {
   line-height: 22px;
 }
 
-html {
-  background-image: url(img/cat_pizza.png);
+html,
+body {
+  background-image: url(img/cat_pizza_fon.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -74,15 +116,23 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  border: transparent;
+  border-radius: 15px 15px;
 }
 
-/* {
-  background-image: url(img/dogs_fon.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
+.card-header {
+  font-family: 'Times New Roman', Times, serif Black;
+  font-size: 20px;
+}
+
+.comments {
+  border-style: solid;
+  border-color: rgb(23, 48, 46);
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+}

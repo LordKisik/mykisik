@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-  {{ news_item.title }} {{ block.super }}
+  {{ news.category.title }} {{ block.super }}
 {% endblock title %}
 {% block sidebar %}
   {% include "inc/_sidebar.html" %}
@@ -8,37 +8,41 @@
 {% load user_filters %}
 {% load thumbnail %}
 {% block content %}
-  <div class="card mb-3">
-    <div>
-      <a href="{% url 'category' news.category.id %}" class="card-header">Категория: {{ news.category.title }}</a>
-    </div>
-    <div class="card-body">
-      {% thumbnail news.photo "960x960" crop="center" upscale=True as im %}
-      <img class="card-img my-2" src="{{ im.url }}">
-    {% endthumbnail %}
-    <h5 class="card-title {% cycle 'text-danger' 'text-danger' %}">{{ news.title }}</h5>
-    <p class="card-text">{{ news.content|linebreaks }}</p>
-    <div class="card my-4">
-      <h5 class="card-header">Добавить комментарий:</h5>
-      <div class="card-body">
-        <form method="post" action="{% url 'add_comment' news.id %}">
-          {% csrf_token %}
-          <div class="form-group mb-2">{{ form.text|addclass:"form-control" }}</div>
-          <button type="submit" class="btn btn-primary">Отправить</button>
-        </form>
+  <div class="col-md-9">
+    <div class="card mb-3">
+      <div>
+        <a href="{% url 'category' news.category.id %}" class="card-header">Категория: {{ news.category.title }}</a>
       </div>
-    </div>
-    {% for comment in comments %}
-      <div class="media mb-4">
-        <div class="media-body">
-          <h5 class="mt-0">
-            <p>Пользователь</p>
-          </h5>
-          <p>{{ comment.text }}</p>
+      <div class="card-body">
+        {% thumbnail news.photo "960x960" crop="center" upscale=True as im %}
+        <img class="card-img my-2" src="{{ im.url }}">
+      {% endthumbnail %}
+      <h5 class="card-title {% cycle 'text-danger' 'text-danger' %}">{{ news.title }}</h5>
+      <p class="card-text">{{ news.content|linebreaks }}</p>
+      <div class="card my-4">
+        <h3 class="card-header">Добавить комментарий:</h3>
+        <div class="card-body">
+          <form method="post" action="{% url 'add_comment' news.id %}">
+            {% csrf_token %}
+            <div class="form-group mb-2">{{ form.text|addclass:"form-control" }}</div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+          </form>
         </div>
       </div>
-    {% endfor %}
+      {% for comment in comments %}
+        <div class="media mb-4">
+          <div class="comments">
+            <h5 class="mt-0">
+              <p>Комментарий пользователя:</p>
+            </h5>
+            <p>{{ comment.text }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="card-footer text-muted">{{ news_item.created_at|date:"Y-m-d H:i:s" }}</div>
   </div>
-  <div class="card-footer text-muted">{{ news_item.created_at|date:"Y-m-d H:i:s" }}</div>
 </div>
 {% endblock content %}

@@ -1,10 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Зарегистрироваться{% endblock title %}
+{% block title %}
+  Зарегистрироваться
+{% endblock title %}
 {% block content %}
   <div class="row justify-content-center">
     <div class="col-md-8 p-5">
       <div class="card">
-        <div class="card-header">Зарегистрироваться</div>
+        <div class="card-header">
+          <h3>Зарегистрироваться</h3>
+        </div>
         <div class="card-body">
           {% load user_filters %}
           {% if form.errors %}
